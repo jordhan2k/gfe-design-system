@@ -3,6 +3,7 @@ import { RiCloseLine, RiMenuLine } from '@remixicon/react'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Button } from '../ui/button'
+import clsx from 'clsx'
 
 const LOGO_URL = "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/projects-images/navbar-component/starter/img/abstractly.svg"
 
@@ -45,15 +46,21 @@ function NavBar() {
       {/* slide-out menu */}
       <div
         aria-hidden={true}
-        data-visible={isOpen}
-        className='data-[visible=false]:hidden xl:hidden fixed w-dvw h-dvh bg-neutral-500/50 top-0 left-0'
-        onClick={() => toggleMenu(false)}
+        className={clsx('/data-[visible=false]:w-0 xl:hidden fixed h-dvh /data-[visible=false]:bg-transparent data-[visible=true]:bg-neutral-500/50 transition-colors top-0 left-0 duration-100',
+          {
+            "w-0! bg-transparent": !isOpen,
+            "w-dvw bg-neutral-500/50": isOpen
+          }
+        )}
+        onClick={(event) => { event.stopPropagation(); toggleMenu(false) }}
       />
       <aside
         data-visible={isOpen}
         role="navigation"
         aria-label="Main menu"
-        className='fixed flex flex-col xl:hidden w-[22.5rem] h-dvh bg-white top-0 left-0 p-4 pt-8 gap-6 justify-between transition-all -translate-x-[100%] data-[visible=true]:translate-x-0' >
+        aria-expanded={isOpen}
+        aria-hidden={!isOpen}
+        className='fixed flex flex-col xl:hidden w-[18.75rem] h-dvh bg-white top-0 left-0 p-4 pt-8 gap-6 justify-between transition-transform -translate-x-[100%] data-[visible=true]:translate-x-0' >
         <div className='flex items-center justify-between'>
           <Image
             width={112}
