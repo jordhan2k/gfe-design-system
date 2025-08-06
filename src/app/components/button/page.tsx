@@ -1,0 +1,32 @@
+import { Button } from '@/components/ui/button'
+import { RiStarLine } from '@remixicon/react';
+import { Star } from 'lucide-react';
+import React from 'react'
+
+const variants = ['primary', 'secondary', 'tertiary', 'link-color', 'link-gray', 'destructive'] as const;
+const sizes = ['sm', 'md', 'lg', 'xl', '2xl'] as const;
+
+const iconState = ["none", "left", "right", "none", "only"] as const;
+
+export default function ButtonPage() {
+  return (
+    <div className='py-[100px] px-6 flex flex-col mx-auto w-fit gap-12'>
+      {
+        variants.map((variant) => (
+          <div key={variant}>
+            {/* <h3 className="text-lg font-semibold mb-2">{variant}</h3> */}
+            <div className="flex flex-wrap gap-x-5 gap-y-5 items-center">
+              {sizes.map((size, index) => (
+                <Button aria-label='Button CTA' key={`${variant}-${size}`} variant={variant} size={size}>
+                  {iconState[index] === 'left' ? <RiStarLine /> : null}
+                  {iconState[index] === 'only' ? <RiStarLine /> : `Button CTA`}
+                  {iconState[index] === 'right' ? <RiStarLine /> : null}
+                </Button>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  )
+}
