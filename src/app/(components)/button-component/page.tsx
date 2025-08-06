@@ -14,7 +14,6 @@ export default function ButtonPage() {
       {
         variants.map((variant) => (
           <div key={variant}>
-            {/* <h3 className="text-lg font-semibold mb-2">{variant}</h3> */}
             <div className="flex flex-wrap gap-x-5 gap-y-5 items-center">
               {sizes.map((size, index) => (
                 <Button aria-label='Button CTA' key={`${variant}-${size}`} variant={variant} size={size}>
