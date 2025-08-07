@@ -6,6 +6,7 @@ export default function Home() {
       <Link href={'/badge-component'}>Badge</Link>
       <Link href={'/button-component'}>Button</Link>
       <Link href={'/navbar-component'}>Nav bar</Link>
+      <Link href={'/text-input-component'}>Text input</Link>
     </div>
   );
 }
