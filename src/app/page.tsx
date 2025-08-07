@@ -8,6 +8,7 @@ export default function Home() {
       <Link href={'/navbar-component'}>Nav bar</Link>
       <Link href={'/text-input-component'}>Text input</Link>
       <Link href={'/text-area-component'}>Text area</Link>
+      <Link href={'/radio-card-component'}>Radio card</Link>
     </div>
   );
 }

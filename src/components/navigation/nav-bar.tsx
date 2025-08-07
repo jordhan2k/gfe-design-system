@@ -56,9 +56,9 @@ function NavBar() {
       />
       <aside
         data-visible={isOpen}
-        role="navigation"
+        // role="navigation"
         aria-label="Main menu"
-        aria-expanded={isOpen}
+        // aria-expanded={isOpen}
         aria-hidden={!isOpen}
         className='fixed flex flex-col xl:hidden w-[18.75rem] h-dvh bg-white top-0 left-0 p-4 pt-8 gap-6 justify-between transition-transform -translate-x-[100%] data-[visible=true]:translate-x-0' >
         <div className='flex items-center justify-between'>

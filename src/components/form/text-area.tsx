@@ -1,7 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils';
 import clsx from 'clsx';
-import React, { useMemo } from 'react'
+import React from 'react';
 
 const MAX_LENGTH = 500;
 
@@ -13,7 +13,7 @@ function TextArea({
   className,
   disabled,
   maxLength = MAX_LENGTH,
-  ...props
+  // ...props
 }: React.ComponentProps<'textarea'>
   & {
     label?: string;
@@ -39,7 +39,7 @@ function TextArea({
           focus:ring-4 focus:ring-indigo-700/12 
           focus:border-indigo-700 focus:outline-none `,
           clsx({
-            'focus:ring-red-600/12  focus:border-red-600': error || (localValue?.length > maxLength),
+            'border-red-600 focus:ring-red-600/12  focus:border-red-600': error || (localValue?.length > maxLength),
             'text-neutral-400 placeholder:text-neutral-400 border-neutral-100': disabled
           })
           , className
@@ -53,4 +53,4 @@ function TextArea({
   )
 }
 
-export { TextArea }
+export { TextArea };

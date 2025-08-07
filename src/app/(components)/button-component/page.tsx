@@ -1,8 +1,6 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 import { RiStarLine } from '@remixicon/react';
-import { Star } from 'lucide-react';
 import { Metadata } from 'next';
-import React from 'react'
 
 const variants = ['primary', 'secondary', 'tertiary', 'link-color', 'link-gray', 'destructive'] as const;
 const sizes = ['sm', 'md', 'lg', 'xl', '2xl'] as const;
