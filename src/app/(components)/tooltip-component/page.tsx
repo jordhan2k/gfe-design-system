@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TooltipPage() {
   return (
-    <div className='mx-auto pt-[200px] w-fit flex flex-col gap-40 items-center'>
+    <div className='mx-auto py-[200px] w-fit flex flex-col gap-40 items-center'>
       <Tooltip title='This is a tooltip content' side={'top'} align={'center'} forceVisible></Tooltip>
       <div className='mx-auto pt-[200px] w-fit flex flex-col gap-20'>
         <div className='flex flex-row gap-6 justify-between'>
