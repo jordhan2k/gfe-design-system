@@ -11,6 +11,7 @@ export default function Home() {
       <Link href={'/radio-card-component'}>Radio card</Link>
       <Link href={'/tab-menu-component'}>Tab menu</Link>
       <Link href={'/tabs-component'}>Tabs</Link>
+      <Link href={'/toggle-component'}>Toggle</Link>
     </div>
   );
 }
