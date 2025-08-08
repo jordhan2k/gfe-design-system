@@ -33,7 +33,7 @@ function RadioCard({
   disabled = false,
   leadingIcon,
   trailingIcon,
-  // ...props
+  ...props
 }: Omit<React.ComponentProps<'input'>, 'size'>
   & VariantProps<typeof radioCardVariants>
   & {
@@ -43,7 +43,7 @@ function RadioCard({
   }) {
   return (
     <div>
-      <input disabled={disabled} className='hidden peer' type='radio' name={name} id={id} value={value} />
+      <input disabled={disabled} className='hidden peer' type='radio' name={name} id={id} value={value} {...props} />
       <label
         htmlFor={id}
         className={cn(radioCardVariants({ size, disabled, className }))}

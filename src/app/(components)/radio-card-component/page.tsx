@@ -25,10 +25,9 @@ function RadioCardPage() {
               options.map((option, idx) => {
                 const leadingIcon = option === "leading" || option === 'both' ? icons[index] : undefined;
                 const trailingIcon = option === "trailing" || option === 'both' ? <RiArrowDownSLine /> : undefined;
-
                 return (
                   <RadioCard
-                    checked={label === 'Monthly'}
+                    // checked={label === 'Monthly'}
                     key={`${label}-${option}-${idx}`}
                     name={`option-${idx}`}
                     id={`${label}-${option}`}
