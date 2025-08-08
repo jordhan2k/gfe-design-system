@@ -53,15 +53,32 @@ function TabList({
 }
 
 const tabButtonVariants = cva(
-  'border-box border border-transparent px-4 py-2.5 rounded-[0.25rem] text-base font-medium text-neutral-600 disabled:bg-transparent! disabled:text-neutral-400 hover:bg-neutral-50 not-disabled:cursor-pointer focus-visible:bg-neutral-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-800/20',
+  'border-box text-base font-medium text-neutral-600 disabled:bg-transparent! disabled:text-neutral-400 not-disabled:cursor-pointer',
   {
     variants: {
+      variant: {
+        button: 'border border-transparent px-4 py-2.5 rounded-[0.25rem] focus-visible:bg-neutral-50 hover:bg-neutral-50  focus-visible:ring-4 focus-visible:ring-indigo-800/20',
+        tab: 'relative px-2 pb-3 hover:text-neutral-900 focus-visible:text-neutral-900 after:w-full after:scale-x-0 after:h-[2px] after:absolute after:-bottom-[1px] after:left-0 after:transition-transform'
+      },
       active: {
-        true: 'text-neutral-900 border-neutral-200 shadow-sm',
+        true: null,
         false: null
       }
     },
+    compoundVariants: [
+      {
+        variant: 'button',
+        active: true,
+        class: 'text-neutral-900 border-neutral-200 shadow-sm',
+      },
+      {
+        variant: 'tab',
+        active: true,
+        class: 'after:scale-x-100 text-indigo-700  hover:text-indigo-800 hover:after:bg-indigo-800  after:bg-indigo-700',
+      },
+    ],
     defaultVariants: {
+      variant: 'button',
       active: false
     }
   }
@@ -70,6 +87,7 @@ const tabButtonVariants = cva(
 function TabButton({
   className,
   value,
+  variant,
   ...props
 }: React.ComponentProps<'button'>
   & VariantProps<typeof tabButtonVariants>) {
@@ -88,7 +106,7 @@ function TabButton({
         context.setActiveTab(value as string);
         props.onClick?.(event);
       }}
-      className={cn(tabButtonVariants({ active: isActive, className }))}
+      className={cn(tabButtonVariants({ variant, active: isActive, className }))}
       {...props}
     />
   )
@@ -97,6 +115,7 @@ function TabButton({
 function TabPanel({
   value,
   children,
+  className,
   ...props
 }: React.ComponentProps<'div'> & { value: string }) {
   const context = React.useContext(TabMenuContext);
@@ -110,6 +129,7 @@ function TabPanel({
       id={`${value}-panel`}
       role="tabpanel"
       hidden={!isActive}
+      className={cn('text-base font-medium text-neutral-900', className)}
       {...props}
     >
       {children}

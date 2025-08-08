@@ -1,18 +1,20 @@
 import { TabButton, TabList, TabPanel, Tabs } from '@/components/ui/tab-menu'
 import { Metadata } from 'next'
 
+
+
 export const metadata: Metadata = {
-  title: 'Tab Menu Component',
+  title: 'Tabs Component',
 }
-export default function TabMenuPage() {
+export default function TabsPage() {
   return (
     <div className='pt-[112px]'>
       <div className='max-w-[340px] mx-auto'>
         <Tabs defaultValue={"account"}>
-          <TabList>
-            <TabButton value={'account'}>Account</TabButton>
-            <TabButton value={'security'}>Security</TabButton>
-            <TabButton value={'plan'}>Plan</TabButton>
+          <TabList className='border-b border-neutral-300 gap-6'>
+            <TabButton variant={"tab"} value={'account'}>Account</TabButton>
+            <TabButton variant={"tab"} value={'security'}>Security</TabButton>
+            <TabButton variant={"tab"} value={'plan'}>Plan</TabButton>
           </TabList>
           <div className="tabs__panels">
             <TabPanel value='account'>

@@ -10,6 +10,7 @@ export default function Home() {
       <Link href={'/text-area-component'}>Text area</Link>
       <Link href={'/radio-card-component'}>Radio card</Link>
       <Link href={'/tab-menu-component'}>Tab menu</Link>
+      <Link href={'/tabs-component'}>Tabs</Link>
     </div>
   );
 }
