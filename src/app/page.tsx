@@ -12,6 +12,7 @@ export default function Home() {
       <Link href={'/tab-menu-component'}>Tab menu</Link>
       <Link href={'/tabs-component'}>Tabs</Link>
       <Link href={'/toggle-component'}>Toggle</Link>
+      <Link href={'/tooltip-component'}>Tooltip</Link>
     </div>
   );
 }
