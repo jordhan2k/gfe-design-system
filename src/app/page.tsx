@@ -1,19 +1,28 @@
 import Link from "next/link";
 
+const components = [
+  { href: '/components/badge', title: 'Badge' },
+  { href: '/components/button', title: 'Button' },
+  { href: '/components/navbar', title: 'Nav bar' },
+  { href: '/components/text-input', title: 'Text input' },
+  { href: '/components/text-area', title: 'Text area' },
+  { href: '/components/radio-card', title: 'Radio card' },
+  { href: '/components/tab-menu', title: 'Tab menu' },
+  { href: '/components/tabs', title: 'Tabs' },
+  { href: '/components/toggle', title: 'Toggle' },
+  { href: '/components/tooltip', title: 'Tooltip' },
+  { href: '/components/checkbox', title: 'Checkbox' },
+  { href: '/components/pagination', title: 'Pagination' },
+];
+
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-6 gap-6">
-      <Link href={'/badge-component'}>Badge</Link>
-      <Link href={'/button-component'}>Button</Link>
-      <Link href={'/navbar-component'}>Nav bar</Link>
-      <Link href={'/text-input-component'}>Text input</Link>
-      <Link href={'/text-area-component'}>Text area</Link>
-      <Link href={'/radio-card-component'}>Radio card</Link>
-      <Link href={'/tab-menu-component'}>Tab menu</Link>
-      <Link href={'/tabs-component'}>Tabs</Link>
-      <Link href={'/toggle-component'}>Toggle</Link>
-      <Link href={'/tooltip-component'}>Tooltip</Link>
-      <Link href={'/checkbox-component'}>Checkbox</Link>
+    <div className="flex flex-col items-center justify-center min-h-screen py-6 gap-6 overflow-y-auto">
+      {components.map(({ href, title }) => (
+        <Link key={href} href={href} className="text-blue-600 hover:underline">
+          {title}
+        </Link>
+      ))}
     </div>
   );
 }
