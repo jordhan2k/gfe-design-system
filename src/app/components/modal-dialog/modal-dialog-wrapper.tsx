@@ -1,8 +1,13 @@
 'use client'
 
 import { Button } from '@/components/ui/button';
-import { ModalDialog } from '@/components/ui/modal-dialog';
+// import { ModalDialog } from '@/components/ui/modal-dialog';
+import dynamic from 'next/dynamic';
 import React, { useState } from 'react'
+
+const ModalDialog = dynamic(() => import('@/components/ui/modal-dialog').then((module) => module.ModalDialog), {
+  loading: () => <></>
+})
 
 function ModalDialogWrapper() {
   const [visible, setVisible] = useState(true);
