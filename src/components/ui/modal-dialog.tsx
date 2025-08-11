@@ -39,8 +39,8 @@ function ModalDialog({
           {description}
         </div>
         <footer className='w-full flex gap-3'>
-          {cancelText ? <Button onClick={() => onCancel?.()} variant={'secondary'} className='flex-1'>{cancelText}</Button> : null}
-          <Button onClick={onConfirm} variant={variant === 'danger' ? 'destructive' : 'primary'} className='flex-1'>{confirmText}</Button>
+          {cancelText ? <Button onClick={() => onCancel?.()} variant={'secondary'} size="lg" className='flex-1'>{cancelText}</Button> : null}
+          <Button onClick={onConfirm} variant={variant === 'danger' ? 'destructive' : 'primary'} size="lg" className='flex-1'>{confirmText}</Button>
         </footer>
       </dialog>
     </div>
