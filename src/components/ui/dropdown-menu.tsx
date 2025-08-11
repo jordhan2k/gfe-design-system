@@ -10,6 +10,7 @@ interface DropdownMenuProps<T> {
   options: T[];
   disabled?: boolean;
   closeOnSelect?: boolean;
+  defaultVisible?: boolean;
   getItemLabel: (item: T) => string;
   getItemValue: (item: T) => string;
   getItemIcon?: (item: T) => ReactNode;
@@ -21,6 +22,7 @@ function DropdownMenu<T>({
   options,
   disabled,
   closeOnSelect = true,
+  defaultVisible = false,
   getItemValue,
   getItemLabel,
   getItemIcon,
@@ -28,7 +30,7 @@ function DropdownMenu<T>({
 }: DropdownMenuProps<T>) {
 
   const [selectOption, setSelectedOption] = useState<T | null>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(defaultVisible);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (event: MouseEvent) => {

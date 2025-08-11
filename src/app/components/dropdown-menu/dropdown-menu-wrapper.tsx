@@ -38,6 +38,7 @@ export default function DropdownMenuWrapper() {
         placeholder='Privacy options'
         options={options}
         closeOnSelect={true}
+        defaultVisible={true}
 
         getItemValue={(item) => item.id}
         getItemLabel={(item) => item.label}
