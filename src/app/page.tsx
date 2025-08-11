@@ -13,6 +13,9 @@ const components = [
   { href: '/components/tooltip', title: 'Tooltip' },
   { href: '/components/checkbox', title: 'Checkbox' },
   { href: '/components/pagination', title: 'Pagination' },
+  { href: '/components/dropdown-menu', title: 'Dropdown menu' },
+  { href: '/components/modal-dialog', title: 'Modal dialog' },
+  { href: '/components/toast', title: 'Toast' },
 ];
 
 export default function Home() {
