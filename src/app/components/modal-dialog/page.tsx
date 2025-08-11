@@ -1,5 +1,3 @@
-import { ModalDialog } from '@/components/ui/modal-dialog'
-import React from 'react'
 import ModalDialogWrapper from './modal-dialog-wrapper'
 
 export default function ModalDialogPage() {
