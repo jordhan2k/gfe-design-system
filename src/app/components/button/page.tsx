@@ -4,7 +4,6 @@ import { Metadata } from 'next';
 
 const variants = ['primary', 'secondary', 'tertiary', 'link-color', 'link-gray', 'destructive'] as const;
 const sizes = ['sm', 'md', 'lg', 'xl', '2xl'] as const;
-
 const iconState = ["none", "left", "right", "none", "only"] as const;
 
 

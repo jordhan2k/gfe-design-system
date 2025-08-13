@@ -9,7 +9,6 @@ export default function ToastPage() {
       <Toast variant={'error'} message='Your content successfully deleted!' presentation />
       <Toast variant={'warning'} message='Your image is 5Mb, it may load longer!' presentation />
       <Toast variant={'info'} message='Your content is publicly visible.' presentation />
-
       <ToastWrapper />
     </div>
   )

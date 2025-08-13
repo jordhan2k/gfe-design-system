@@ -17,9 +17,9 @@ export default function TooltipPage() {
           <Tooltip title='This is a tooltip content' side={'top'} align={'end'}>Top end</Tooltip>
         </div>
         <div className='flex flex-row gap-6 justify-between'>
-          <Tooltip title='This is a tooltip content' side={'right'} >Left</Tooltip>
+          <Tooltip title='This is a tooltip content' side={'right'} >Right</Tooltip>
           <Tooltip title='This is a tooltip content' arrow={false}>None</Tooltip>
-          <Tooltip title='This is a tooltip content' side={'left'} >Right</Tooltip>
+          <Tooltip title='This is a tooltip content' side={'left'} >Left</Tooltip>
         </div>
         <div className='flex flex-row gap-6 justify-between'>
           <Tooltip title='This is a tooltip content' side={'bottom'} align={'start'}>Bottom start</Tooltip>

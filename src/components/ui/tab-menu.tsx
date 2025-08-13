@@ -57,7 +57,7 @@ const tabButtonVariants = cva(
   {
     variants: {
       variant: {
-        button: 'border border-transparent px-4 py-2.5 rounded-[0.25rem] focus-visible:bg-neutral-50 hover:bg-neutral-50  focus-visible:ring-4 focus-visible:ring-indigo-800/20',
+        button: 'border border-transparent px-4 py-2.5 rounded-[0.25rem] focus-visible:bg-neutral-50 hover:bg-neutral-50  focus-visible:ring-4 focus-visible:ring-indigo-800/20 focus-visible:outline-none',
         tab: 'relative px-2 pb-3 hover:text-neutral-900 focus-visible:text-neutral-900 after:w-full after:scale-x-0 after:h-[2px] after:absolute after:-bottom-[1px] after:left-0 after:transition-transform'
       },
       active: {
@@ -100,7 +100,7 @@ function TabButton({
   const isActive = context.activeTab === value;
   return (
     <button
-      aria-selected={isActive}
+      role="tab"
       aria-controls={`${value as string}-panel`}
       onClick={(event) => {
         context.setActiveTab(value as string);

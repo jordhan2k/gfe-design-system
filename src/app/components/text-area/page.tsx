@@ -1,6 +1,7 @@
 import { TextArea } from '@/components/form/text-area'
 import { Metadata } from 'next'
 import React from 'react'
+import TextAreaWrapper from './text-area-wrapper'
 
 export const metadata: Metadata = {
   title: 'Text Area Component',
@@ -20,13 +21,8 @@ export default function TextAreaPage() {
         placeholder='Write your content...'
         error='This field is required.'
       />
-      <TextArea
-        name='message'
-        label='Message'
-        placeholder='Write your message...'
-        // error='This field is required.'
-        disabled
-      />
+      <TextAreaWrapper />
+
     </div>
   )
 }

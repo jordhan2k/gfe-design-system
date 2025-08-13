@@ -12,6 +12,10 @@ const toggleContainerVariants = cva(
         sm: 'w-9 h-5',
         md: 'w-11 h-6',
       },
+      disabled: {
+        true: 'pointer-events-none ',
+        false: ''
+      },
     },
     defaultVariants: {
       size: 'md'
@@ -40,8 +44,6 @@ const toggleVariants = cva(
         hover:peer-checked:bg-indigo-800 hover:peer-checked:border-indigo-600
         hover:peer-checked:ring-4 hover:peer-checked:ring-indigo-600/12
         peer-focus:ring-4 peer-focus:ring-gray-400/12 peer-focus:bg-gray-300 peer-focus:border-gray-400
-        
-        
         peer-checked:peer-focus:bg-indigo-800 peer-checked:peer-focus:border-indigo-600
         peer-checked:peer-focus:ring-4 peer-checked:peer-focus:peer-checked:ring-indigo-600/12
         `
@@ -62,7 +64,7 @@ function Toggle({
 }: Omit<React.ComponentProps<'input'>, 'size'>
   & VariantProps<typeof toggleVariants>) {
   return (
-    <label htmlFor={name} className={cn(toggleContainerVariants({ size }))} >
+    <label htmlFor={name} className={cn(toggleContainerVariants({ size, disabled }))} >
       <input
         id={name}
         checked={checked}

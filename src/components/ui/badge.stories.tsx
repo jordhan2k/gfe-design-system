@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Badge } from './badge';
 
 const meta = {
-  title: 'ui/Badge',
+  title: 'Components/Badge',
   component: Badge,
   tags: ['autodocs'],
   argTypes: {
@@ -19,9 +19,6 @@ const meta = {
       options: ['sm', 'md', 'lg', 'xl', '2xl']
     }
   },
-  args: {
-    children: 'Badge',
-  },
   parameters: {
     layout: 'centered',
   },
@@ -36,37 +33,35 @@ export const Default: Story = {
   args: {
     variant: 'brand',
     size: 'md',
+    children: 'Badge'
   }
 };
 
-export const Neutral: Story = {
+const variants = ['neutral', 'danger', 'warning', 'success', 'brand'] as const;
+const sizes = ['sm', 'md', 'lg'] as const;
+
+export const Demo: Story = {
   args: {
-    variant: 'neutral',
-    size: 'md',
-  }
+  },
+  render: (args) => (
+    <div className='flex flex-col gap-4'>{
+      variants.map((variant) => (
+        <div key={`${variant}`} className="flex flex-row gap-6 items-center">
+          {sizes.map((size) => (
+            <Badge
+              key={`${variant}-${size}`}
+              variant={variant}
+              size={size}
+            >
+              {args.children ?? "Badge"}
+            </Badge>
+
+          ))
+          }
+        </div>
+      ))
+    }</div>
+  )
+
 };
 
-export const Danger: Story = {
-  args: {
-    variant: 'danger',
-    size: 'md',
-  }
-};
-export const Warning: Story = {
-  args: {
-    variant: 'warning',
-    size: 'md',
-  }
-};
-export const Success: Story = {
-  args: {
-    variant: 'success',
-    size: 'md',
-  }
-};
-export const Brand: Story = {
-  args: {
-    variant: 'brand',
-    size: 'md',
-  }
-};

@@ -17,11 +17,11 @@ const buttonVariants = cva(
         "destructive": "bg-red-600 text-white hover:bg-red-700 focus:bg-red-700  focus:ring-red-800/20 disabled:bg-neutral-100 disabled:text-neutral-400 disabled:shadow-none!",
       },
       size: {
-        sm: "px-3 py-2 text-sm gap-1 has-[>svg:nth-of-type(1):last-of-type]:px-2",
-        md: "px-3.5 py-2.5 text-sm gap-1 has-[>svg:nth-of-type(1):last-of-type]:px-2.5 ",
-        lg: "px-4 py-2.5 text-base gap-1.5 has-[>svg:nth-of-type(1):last-of-type]:px-2.5",
-        xl: "px-5 py-3 text-base gap-1.5 has-[>svg:nth-of-type(1):last-of-type]:px-3",
-        "2xl": "px-6 py-4 text-lg gap-2.5 has-[>svg:nth-of-type(1):last-of-type]:px-4  [&_svg:not([class*='size-'])]:size-6"
+        sm: "px-3 py-2 text-sm gap-1.5 has-[>svg:nth-of-type(1):last-of-type]:px-2",
+        md: "px-3.5 py-2.5 text-sm gap-1.5 has-[>svg:nth-of-type(1):last-of-type]:px-2.5 ",
+        lg: "px-4 py-2.5 text-base gap-2 has-[>svg:nth-of-type(1):last-of-type]:px-2.5",
+        xl: "px-5 py-3 text-base gap-2 has-[>svg:nth-of-type(1):last-of-type]:px-3",
+        "2xl": "px-6 py-4 text-lg gap-3 has-[>svg:nth-of-type(1):last-of-type]:px-4  [&_svg:not([class*='size-'])]:size-6"
       }
     },
     defaultVariants: {

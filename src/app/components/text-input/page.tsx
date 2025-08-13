@@ -15,7 +15,7 @@ export default function TextInputPage() {
         label='Email'
         name='email'
         type='email'
-        value={"user@gmail.com"}
+        defaultValue={"user@gmail.com"}
         placeholder='abc@gmail.com'
         hintText='This is a hint text.'
         helpIcon

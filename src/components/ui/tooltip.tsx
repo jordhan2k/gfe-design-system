@@ -18,8 +18,8 @@ const tooltipVariants = cva(
       },
       side: {
         top: "after:bottom-[-5px] mb-[5px] bottom-[100%]",
-        left: "right-[100%] top-[50%] -translate-y-[50%] mr-[7px] after:top-[50%] after:-translate-y-[50%] after:right-[-5px]",
-        right: "left-[100%] top-[50%] -translate-y-[50%] ml-[7px] after:top-[50%] after:-translate-y-[50%] after:left-[-5px]",
+        left: "right-[100%] top-[50%] -translate-y-[50%] mr-[7px] after:top-[50%] after:-translate-y-[50%] after:right-[-5px] after:left-[unset]",
+        right: "left-[100%] top-[50%] -translate-y-[50%] ml-[7px] after:top-[50%] after:-translate-y-[50%] after:left-[-5px] after:right-[unset] right-[unset]",
         bottom: "after:top-[-5px] mt-[5px] top-[100%]",
       },
       forceVisible: {
@@ -65,7 +65,7 @@ function Tooltip({
         {children}
       </div>
       <div
-        className={cn(tooltipVariants({ arrow, side, align, forceVisible }), '')}
+        className={cn(tooltipVariants({ arrow, side, align, forceVisible }),)}
         role='tooltip'>
         {title}
       </div>

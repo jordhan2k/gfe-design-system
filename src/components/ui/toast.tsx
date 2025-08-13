@@ -26,7 +26,7 @@ const LabelMap = {
   info: 'Info',
 }
 function Toast({
-  variant, message, presentation
+  variant = 'info', message, presentation
 }: React.ComponentProps<'div'>
   & VariantProps<typeof toastVariants>
   & {

@@ -18,13 +18,14 @@ function TextInput({
   error,
   disabled,
   ...props
-}: React.ComponentProps<'input'>
+}: Omit<React.ComponentProps<'input'>, 'type'>
   & {
     label?: string;
     hintText?: string | React.ReactNode;
     leadingIcon?: React.ReactNode;
     helpIcon?: boolean;
     error?: string | React.ReactNode;
+    type?: 'text' | 'email' | 'password';
   }) {
   const [localType, setLocalType] = React.useState(type);
 
@@ -72,7 +73,7 @@ function TextInput({
         (hintText || error) ? <div id={`${name}-hint`} className={clsx('text-sm text-gray-500', {
           'text-red-600': error
         })}>
-          {error ?? hintText}
+          {!!error ? error : hintText}
         </div> : null
       }
     </div >

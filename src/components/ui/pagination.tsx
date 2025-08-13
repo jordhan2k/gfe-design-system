@@ -61,6 +61,8 @@ function Ellipsis() {
 
 
 type PaginationItemType = { page?: number; id?: string }
+
+
 function Pagination({
   iconOnly,
   className,
@@ -68,8 +70,6 @@ function Pagination({
   initialPage = 1,
   disabled = false,
   ...props
-
-
 }: React.ComponentProps<'div'> &
   {
     iconOnly?: boolean;

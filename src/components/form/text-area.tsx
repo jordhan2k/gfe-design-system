@@ -13,13 +13,14 @@ function TextArea({
   className,
   disabled,
   maxLength = MAX_LENGTH,
-  // ...props
+  ...props
 }: React.ComponentProps<'textarea'>
   & {
     label?: string;
     error?: string | React.ReactNode;
   }) {
-  const [localValue, setLocalValue] = React.useState('');
+
+  const length = (typeof props.value === 'string' ? props.value : "").length ?? 0;
   return (
     <div className='w-full flex flex-col gap-1.5'>
       {label ? <label className='w-full text-sm font-medium text-gray-700' htmlFor={name}>{label}</label> : null}
@@ -28,10 +29,8 @@ function TextArea({
         name={name}
         rows={4}
         disabled={disabled}
-        maxLength={maxLength}
         aria-describedby={`${name}-hint`}
         placeholder={placeholder}
-        onChange={(e) => { setLocalValue(e.target.value) }}
         className={cn(
           `resize-none border text-sm leading-5  font-normal bg-neutral-50
           border-neutral-200 rounded-[0.25rem] 
@@ -39,16 +38,17 @@ function TextArea({
           focus:ring-4 focus:ring-indigo-700/12 
           focus:border-indigo-700 focus:outline-none `,
           clsx({
-            'border-red-600 focus:ring-red-600/12  focus:border-red-600': error || (localValue?.length > maxLength),
+            'border-red-600 focus:ring-red-600/12  focus:border-red-600': error || (length > maxLength),
             'text-neutral-400 placeholder:text-neutral-400 border-neutral-100': disabled
           })
           , className
         )}
+        {...props}
       />
       <div id={`${name}-hint`} className={clsx('text-sm text-gray-500', {
-        'text-red-600': error || (localValue?.length > maxLength),
+        'text-red-600': error || (length > maxLength),
         'text-right': !error
-      })}>{error ? error : `${localValue?.length}/${maxLength}`}</div>
+      })}>{!!error ? error : `${length}/${maxLength}`}</div>
     </div>
   )
 }
